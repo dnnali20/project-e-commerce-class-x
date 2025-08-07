@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLSHOP - Profil Saya</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4DB6AC',secondary:'#2A9D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+        }
+        .custom-radio input[type="radio"] {
+            display: none;
+        }
+        .custom-radio input[type="radio"] + label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 20px;
+        }
+        .custom-radio input[type="radio"] + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .custom-radio input[type="radio"]:checked + label:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4DB6AC;
+        }
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-green-500 text-white">
+        <!-- Top Bar -->
+        <div class="flex justify-between items-center px-6 py-2">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-sm font-medium">BANTUAN</a>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm">IKUTI KAMI</span>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-instagram-line text-white text-sm"></i>
+                    </a>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-facebook-line text-white text-sm"></i>
+                    </a>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-youtube-line text-white text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <nav class="flex space-x-6">
+                <a href="#" class="text-sm font-medium">HOME</a>
+                <a href="#" class="text-sm font-medium">BANTUAN</a>
+                <a href="#" class="text-sm font-medium">PROMO</a>
+                <a href="#" class="text-sm font-medium">TENTANG OLSHOP</a>
+            </nav>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="flex justify-between items-center px-6 py-3 bg-green-500">
+            <a href="#" class="font-['Pacifico'] text-2xl font-bold">OLSHOP</a>
+            
+            <div class="w-2/5">
+                <div class="relative">
+                    <input type="text" placeholder="Search" class="w-full py-2 px-4 rounded border-none text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 w-8 h-8 flex items-center justify-center">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-shopping-cart-2-line text-xl"></i>
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-user-line text-xl"></i>
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-settings-3-line text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="flex min-h-[calc(100vh-200px)]">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md p-6">
+            <div class="mb-6">
+                <h3 class="font-bold mb-3 flex items-center">
+                    <i class="ri-user-line mr-2"></i> Akun Saya
+                </h3>
+                <ul class="space-y-2 pl-6">
+                    <li class="text-primary font-medium"><a href="#">Profil</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-primary">Bank Kartu</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-primary">Alamat</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-primary">Ubah Password</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-primary">Pengaturan Privasi</a></li>
+                </ul>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="font-bold mb-3 flex items-center">
+                    <i class="ri-file-list-3-line mr-2"></i> Pesanan Saya
+                </h3>
+            </div>
+            
+            <div>
+                <h3 class="font-bold mb-3 flex items-center">
+                    <i class="ri-coupon-3-line mr-2"></i> Vouchers Saya
+                </h3>
+            </div>
+        </aside>
+        
+        <!-- Content Area -->
+        <main class="flex-1 p-6">
+            <div class="bg-green-500 rounded-md p-6 text-white mb-6">
+                <h1 class="text-2xl font-bold mb-2">Profil Saya</h1>
+                <p class="text-sm">Kelola informasi profil Anda untuk mengontrol, melindungi dan mengamankan akun.</p>
+            </div>
+            
+            <div class="bg-white rounded-md shadow-sm p-6">
+                <div class="flex">
+                    <!-- Form Section -->
+                    <div class="w-2/3 pr-8">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Username</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Nama</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <div class="flex">
+                                <input type="text" value="far**@gmail.com" disabled class="w-full p-2 bg-gray-100 border border-gray-300 rounded-l focus:outline-none text-gray-500">
+                                <button class="bg-gray-200 px-4 rounded-r border border-l-0 border-gray-300 text-gray-700 whitespace-nowrap !rounded-button">Ubah</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Nomor Telepon</label>
+                            <div class="flex">
+                                <input type="text" value="*12" disabled class="w-full p-2 bg-gray-100 border border-gray-300 rounded-l focus:outline-none text-gray-500">
+                                <button class="bg-gray-200 px-4 rounded-r border border-l-0 border-gray-300 text-gray-700 whitespace-nowrap !rounded-button">Ubah</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Nama Toko</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2">Jenis Kelamin</label>
+                            <div class="flex space-x-6">
+                                <div class="custom-radio">
+                                    <input type="radio" id="male" name="gender" checked>
+                                    <label for="male">Laki-Laki</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input type="radio" id="female" name="gender">
+                                    <label for="female">Perempuan</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input type="radio" id="other" name="gender">
+                                    <label for="other">Lainnya</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2">Tanggal Lahir</label>
+                            <div class="flex space-x-2">
+                                <select class="custom-select w-1/3 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option selected>3</option>
+                                    <!-- More options -->
+                                </select>
+                                <select class="custom-select w-1/3 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8">
+                                    <option>Januari</option>
+                                    <option selected>Februari</option>
+                                    <option>Maret</option>
+                                    <!-- More options -->
+                                </select>
+                                <select class="custom-select w-1/3 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8">
+                                    <option>1990</option>
+                                    <option>1991</option>
+                                    <option selected>1992</option>
+                                    <!-- More options -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="bg-green-500 text-white px-6 py-2 rounded font-medium hover:bg-opacity-90 transition whitespace-nowrap !rounded-button">SIMPAN</button>
+                    </div>
+                    
+                    <!-- Profile Picture Section -->
+                    <div class="w-1/3 flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full border-2 border-gray-200 flex items-center justify-center mb-4 overflow-hidden">
+                            <i class="ri-user-line text-7xl text-gray-400"></i>
+                        </div>
+                        <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 transition whitespace-nowrap !rounded-button">Pilih Gambar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 pt-12 pb-6 border-t border-gray-200">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+<!-- Category Links -->
+<div>
+<h3 class="text-gray-800 font-bold mb-4">KATEGORI PRODUK</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-600 hover:text-primary">Baju Pria</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Baju Wanita</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Celana Pria</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Celana Wanita</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Aksesoris</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Sepatu & Tas</a></li>
+</ul>
+</div>
+<!-- Payment Methods -->
+<div>
+<h3 class="text-gray-800 font-bold mb-4">PEMBAYARAN</h3>
+<div class="grid grid-cols-3 gap-2">
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-visa-fill ri-lg text-blue-600"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-mastercard-fill ri-lg text-red-500"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-bank-card-fill ri-lg text-gray-700"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-alipay-fill ri-lg text-blue-500"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-paypal-fill ri-lg text-blue-700"></i>
+</div>
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-bank-fill ri-lg text-gray-700"></i>
+</div>
+</div>
+</div>
+<!-- Shipping Methods -->
+<div>
+<h3 class="text-gray-800 font-bold mb-4">PENGIRIMAN</h3>
+<div class="grid grid-cols-2 gap-2">
+<div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-truck-fill ri-lg text-red-500 mr-1"></i>
+<span class="text-xs font-medium">JNE</span>
+</div>
+<div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-truck-fill ri-lg text-green-600 mr-1"></i>
+<span class="text-xs font-medium">J&T</span>
+</div>
+<div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-truck-fill ri-lg text-blue-500 mr-1"></i>
+<span class="text-xs font-medium">SiCepat</span>
+</div>
+<div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+<i class="ri-truck-fill ri-lg text-orange-500 mr-1"></i>
+<span class="text-xs font-medium">Pos</span>
+</div>
+</div>
+</div>
+<!-- Help -->
+<div>
+<h3 class="text-gray-800 font-bold mb-4">BANTUAN</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-600 hover:text-primary">Cara Pembelian</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Pengiriman</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Pembayaran</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Pengembalian</a></li>
+</ul>
+</div>
+<!-- Download App -->
+<div>
+<h3 class="text-gray-800 font-bold mb-4">DOWNLOAD APLIKASI</h3>
+<div class="space-y-3">
+<a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36">
+<div class="w-8 h-8 flex items-center justify-center mr-2">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+<div>
+<p class="text-xs">Download on the</p>
+<p class="text-sm font-medium">App Store</p>
+</div>
+</a>
+<a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36">
+<div class="w-8 h-8 flex items-center justify-center mr-2">
+<i class="ri-google-play-fill ri-lg"></i>
+</div>
+<div>
+<p class="text-xs">GET IT ON</p>
+<p class="text-sm font-medium">Google Play</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Social Media and Copyright -->
+<div class="pt-8 border-t border-gray-200">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2025 OLSHOP. Hak Cipta Dilindungi.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white">
+<i class="ri-facebook-circle-line"></i>
+</a>
+<a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white">
+<i class="ri-twitter-x-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="navigation-interaction">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+navLinks.forEach(l => {
+l.classList.remove('text-primary', 'border-primary');
+l.classList.add('text-gray-600', 'border-transparent');
+});
+this.classList.remove('text-gray-600', 'border-transparent');
+this.classList.add('text-primary', 'border-primary');
+});
+});
+});
+</script>
+<script id="search-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('focus', function() {
+this.classList.add('ring-2', 'ring-primary', 'ring-opacity-50');
+});
+searchInput.addEventListener('blur', function() {
+this.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+});
+});
+</script>
+<script id="product-interaction">
+document.addEventListener('DOMContentLoaded', function() {
+const cartButtons = document.querySelectorAll('.product-card button');
+cartButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Add animation effect
+this.classList.add('scale-110');
+setTimeout(() => {
+this.classList.remove('scale-110');
+}, 200);
+// Show notification (in a real app, this would add to cart)
+alert('Produk ditambahkan ke keranjang!');
+});
+});
+});
+</script>
+<script id="category-interaction">
+document.addEventListener('DOMContentLoaded', function() {
+const categoryItems = document.querySelectorAll('.category-item');
+categoryItems.forEach(item => {
+item.addEventListener('click', function() {
+// Add active state
+categoryItems.forEach(cat => cat.classList.remove('bg-green-500', 'text-white'));
+categoryItems.forEach(cat => cat.classList.add('bg-secondary'));
+this.classList.remove('bg-secondary');
+this.classList.add('bg-primary', 'text-white');
+// In a real app, this would filter products
+const categoryName = this.querySelector('p').textContent;
+console.log(`Category selected: ${categoryName}`);
+});
+});
+});
+</script>
+</body>
+</html>

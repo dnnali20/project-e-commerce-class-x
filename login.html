@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everest - Login</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#00b074',secondary:'#4a6cf7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+</style>
+</head>
+<body class="min-h-screen bg-white flex flex-col items-center justify-center">
+<div class="w-full max-w-md flex">
+<!-- Login Form -->
+<div class="w-full p-8 flex flex-col">
+<div class="mb-8 flex justify-center">
+<div class="text-primary font-['Pacifico'] text-2xl">Everest</div>
+</div>
+<div class="w-full max-w-md mx-auto">
+<a href="homehat.html" class="text-2xl font-bold text-primary mb-6">LOGIN</h1>
+<form class="space-y-4">
+<div>
+<label class="block text-sm mb-1">Email</label>
+<input type="email"
+placeholder="Email..."
+class="w-full px-3 py-2 border border-gray-200 rounded focus:outline-none focus:border-primary">
+</div>
+<div class="relative">
+<div class="flex justify-between items-center mb-1">
+<label class="block text-sm">Password</label>
+<button type="button" id="togglePassword" class="text-sm text-primary">Hide</button>
+</div>
+<input type="password"
+id="passwordField"
+placeholder="Password..."
+class="w-full px-3 py-2 border border-gray-200 rounded focus:outline-none focus:border-primary">
+</div>
+<button type="submit"
+class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90 whitespace-nowrap">
+Login
+</button>
+</form>
+<div class="mt-4 text-sm">
+<a href="#" class="text-gray-600 hover:text-primary">Forgot Your Password?</a>
+</div>
+<div class="mt-2 text-sm">
+<span class="text-gray-600">Didn't Have An Account?</span>
+<a href="reegister.html" class="text-black font-medium ml-1 hover:text-primary">Register</a>
+</div>
+</div>
+</div>
+</div>
+<script id="passwordToggle">
+document.addEventListener('DOMContentLoaded', function() {
+const toggleButton = document.getElementById('togglePassword');
+const passwordField = document.getElementById('passwordField');
+toggleButton.addEventListener('click', function() {
+if (passwordField.type === 'password') {
+passwordField.type = 'text';
+toggleButton.textContent = 'Show';
+} else {
+passwordField.type = 'password';
+toggleButton.textContent = 'Hide';
+}
+});
+});
+</script>
+</body>
+</html>

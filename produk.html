@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | MOUNTGEAR</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#40bfb4', secondary: '#e6f7f6' },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-green-500 text-white shadow-sm sticky top-0 z-50">
+        <!-- Top Bar -->
+        <div class="flex justify-between items-center px-6 py-2">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-sm font-medium">BANTUAN</a>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm">IKUTI KAMI</span>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-instagram-line text-white text-sm"></i>
+                    </a>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-facebook-line text-white text-sm"></i>
+                    </a>
+                    <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20">
+                        <i class="ri-youtube-line text-white text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <nav class="flex space-x-6">
+                <a href="#" class="text-sm font-medium">HOME</a>
+                <a href="#" class="text-sm font-medium">BANTUAN</a>
+                <a href="#" class="text-sm font-medium">PROMO</a>
+                <a href="#" class="text-sm font-medium">TENTANG MOUNTGEAR</a>
+            </nav>
+        </div>
+
+        <!-- Main Header -->
+        <div class="flex justify-between items-center px-6 py-3 bg-green-500">
+            <a href="index.html" class="font-['Pacifico'] text-2xl font-bold">MOUNTGEAR</a>
+            <div class="w-2/5">
+                <div class="relative">
+                    <input type="search" placeholder="Search" class="w-full py-2 px-4 rounded border-none text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 w-8 h-8 flex items-center justify-center">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="keranjang.html" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-shopping-cart-2-line text-xl"></i>
+                </a>
+                <a href="profil.html" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-user-line text-xl"></i>
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center text-white">
+                    <i class="ri-settings-3-line text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 container mx-auto px-4 py-6">
+        <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Product Images Section -->
+            <div class="space-y-4">
+                <div id="main-image" class="relative bg-secondary rounded-lg overflow-hidden">
+                    <div class="absolute top-3 left-3 bg-amber-600 text-white px-3 py-1 text-xs font-medium rounded">
+                        NEW ARRIVAL
+                    </div>
+                    <img id="product-image" class="w-full h-auto object-contain aspect-square p-4" alt="Product Image">
+                </div>
+                <div class="grid grid-cols-4 gap-3">
+                    <div class="thumbnail-container bg-secondary rounded-lg overflow-hidden cursor-pointer aspect-square">
+                        <img class="thumbnail w-full h-full object-contain p-2" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail-container bg-secondary rounded-lg overflow-hidden cursor-pointer aspect-square">
+                        <img class="thumbnail w-full h-full object-contain p-2" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail-container bg-secondary rounded-lg overflow-hidden cursor-pointer aspect-square">
+                        <img class="thumbnail w-full h-full object-contain p-2" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail-container bg-secondary rounded-lg overflow-hidden cursor-pointer aspect-square">
+                        <img class="thumbnail w-full h-full object-contain p-2" alt="Thumbnail 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="space-y-6">
+                <div>
+                    <h1 id="product-title" class="text-2xl font-bold text-gray-900"></h1>
+                    <p id="product-price" class="text-xl font-semibold mt-1"></p>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-medium mb-2">Color: <span id="color-value">N/A</span></p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="font-medium">Size</p>
+                            <a href="#" class="text-xs text-primary flex items-center">
+                                <span class="underline">Size Guide</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="size-btn border border-gray-300 py-2 text-center rounded !rounded-button whitespace-nowrap">S</button>
+                            <button class="size-btn border border-gray-300 py-2 text-center rounded !rounded-button whitespace-nowrap">M</button>
+                            <button class="size-btn border border-gray-300 py-2 text-center rounded !rounded-button whitespace-nowrap">L</button>
+                            <button class="size-btn border border-gray-300 py-2 text-center rounded !rounded-button whitespace-nowrap">XL</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <button id="add-to-cart-btn" class="w-full bg-primary text-white py-3 font-medium rounded !rounded-button whitespace-nowrap">Add to Cart</button>
+                    <button class="w-full border border-gray-300 text-gray-800 py-3 font-medium rounded !rounded-button whitespace-nowrap">Buy Now</button>
+                    <button class="w-full flex items-center justify-center gap-2 border border-gray-300 text-gray-800 py-3 font-medium rounded !rounded-button whitespace-nowrap">
+                        <i class="ri-truck-line"></i>
+                        <span>Ship to Home</span>
+                    </button>
+                    <div class="text-sm text-gray-600 pl-6">
+                        <p>Standard Shipping</p>
+                        <p>2-5 Business Days</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium text-lg">Description</h3>
+                    <div id="product-description" class="text-gray-600 text-sm space-y-2"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 pt-12 pb-6 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-4">KATEGORI PRODUK</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Baju Pria</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Baju Wanita</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Celana Pria</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Celana Wanita</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Aksesoris</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Sepatu & Tas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-4">PEMBAYARAN</h3>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-visa-fill ri-lg text-blue-600"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-mastercard-fill ri-lg text-red-500"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-bank-card-fill ri-lg text-gray-700"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-alipay-fill ri-lg text-blue-500"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-paypal-fill ri-lg text-blue-700"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-bank-fill ri-lg text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-4">PENGIRIMAN</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-truck-fill ri-lg text-red-500 mr-1"></i>
+                            <span class="text-xs font-medium">JNE</span>
+                        </div>
+                        <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-truck-fill ri-lg text-green-600 mr-1"></i>
+                            <span class="text-xs font-medium">J&T</span>
+                        </div>
+                        <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-truck-fill ri-lg text-blue-500 mr-1"></i>
+                            <span class="text-xs font-medium">SiCepat</span>
+                        </div>
+                        <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+                            <i class="ri-truck-fill ri-lg text-orange-500 mr-1"></i>
+                            <span class="text-xs font-medium">Pos</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-4">BANTUAN</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Cara Pembelian</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Pengiriman</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Pembayaran</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Pengembalian</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-4">DOWNLOAD APLIKASI</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36 hover:bg-gray-800">
+                            <div class="w-8 h-8 flex items-center justify-center mr-2">
+                                <i class="ri-apple-fill ri-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs">Download on the</p>
+                                <p class="text-sm font-medium">App Store</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36 hover:bg-gray-800">
+                            <div class="w-8 h-8 flex items-center justify-center mr-2">
+                                <i class="ri-google-play-fill ri-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs">GET IT ON</p>
+                                <p class="text-sm font-medium">Google Play</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2025 MOUNTGEAR. Hak Cipta Dilindungi.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+                            <i class="ri-facebook-circle-line"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        Produk berhasil ditambahkan ke keranjang!
+    </div>
+
+    <script id="product-data-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get product ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Validate product ID
+            if (!productId) {
+                document.getElementById('product-container').innerHTML = '<p class="text-red-500 text-center col-span-2">Produk tidak ditemukan.</p>';
+                return;
+            }
+
+            // Fetch product data
+            fetch(`https://fakestoreapi.com/products/${productId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Produk tidak ditemukan');
+                    return response.json();
+                })
+                .then(product => {
+                    // Update product details
+                    document.getElementById('product-title').textContent = product.title;
+                    document.getElementById('product-price').textContent = `Rp ${(product.price * 15000).toLocaleString('id-ID')}`;
+                    document.getElementById('product-image').src = product.image;
+                    document.getElementById('product-image').alt = product.title;
+
+                    // Update thumbnails
+                    const thumbnails = document.querySelectorAll('.thumbnail');
+                    thumbnails.forEach(thumbnail => {
+                        thumbnail.src = product.image;
+                        thumbnail.alt = product.title;
+                    });
+
+                    // Update description
+                    const description = product.description || 'Deskripsi produk tidak tersedia.';
+                    document.getElementById('product-description').innerHTML = description.split('. ').map(para => `<p>${para.trim()}.</p>`).join('');
+
+                    // Add to cart functionality
+                    const addToCartBtn = document.getElementById('add-to-cart-btn');
+                    const notification = document.getElementById('notification');
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    function saveCart() {
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                    }
+
+                    function showNotification() {
+                        notification.classList.remove('translate-x-full');
+                        setTimeout(() => {
+                            notification.classList.add('translate-x-full');
+                        }, 2000);
+                    }
+
+                    addToCartBtn.addEventListener('click', () => {
+                        const selectedSize = document.querySelector('.size-btn.bg-primary')?.textContent || 'N/A';
+                        const productData = {
+                            id: product.id,
+                            title: product.title,
+                            price: product.price * 15000,
+                            image: product.image,
+                            size: selectedSize,
+                            quantity: 1,
+                            store: 'mountgear'
+                        };
+
+                        const existingProduct = cart.find(item => item.id === productData.id && item.size === productData.size);
+                        if (existingProduct) {
+                            existingProduct.quantity += 1;
+                        } else {
+                            cart.push(productData);
+                        }
+
+                        saveCart();
+                        showNotification();
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching product:', error);
+                    document.getElementById('product-container').innerHTML = '<p class="text-red-500 text-center col-span-2">Gagal memuat produk. Silakan coba lagi nanti.</p>';
+                });
+        });
+    </script>
+
+    <script id="size-selection-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const sizeButtons = document.querySelectorAll('.size-btn');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    sizeButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('border-gray-300');
+                    });
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('border-gray-300');
+                });
+            });
+        });
+    </script>
+
+    <script id="thumbnail-selection-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnailContainers = document.querySelectorAll('.thumbnail-container');
+            const mainImage = document.getElementById('product-image');
+            thumbnailContainers.forEach(container => {
+                container.addEventListener('click', function() {
+                    const thumbnailImg = this.querySelector('.thumbnail');
+                    mainImage.src = thumbnailImg.src;
+                    thumbnailContainers.forEach(cont => cont.classList.remove('ring-2', 'ring-primary'));
+                    this.classList.add('ring-2', 'ring-primary');
+                });
+            });
+            if (thumbnailContainers.length > 0) {
+                thumbnailContainers[0].classList.add('ring-2', 'ring-primary');
+            }
+        });
+    </script>
+</body>
+</html>

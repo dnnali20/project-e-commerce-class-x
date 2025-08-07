@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OLSHOP - Toko Online Terpercaya</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#40bfb4", secondary: "#e6f7f6" },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f9fafb;
+    }
+
+    .search-input:focus {
+      outline: none;
+    }
+
+    .category-item:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #40bfb4;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #40bfb4;
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: "✓";
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <!-- Navigation Bar -->
+  <header class="bg-green-500 text-white">
+    <!-- Top Bar -->
+    <div class="flex justify-between items-center px-6 py-2">
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-sm font-medium hover:text-secondary">BANTUAN</a>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm">IKUTI KAMI</span>
+          <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20 hover:bg-secondary">
+            <i class="ri-instagram-line text-sm"></i>
+          </a>
+          <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20 hover:bg-secondary">
+            <i class="ri-facebook-line text-sm"></i>
+          </a>
+          <a href="#" class="w-6 h-6 flex items-center justify-center rounded-full bg-white/20 hover:bg-secondary">
+            <i class="ri-youtube-line text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="text-sm font-medium hover:text-secondary">HOME</a>
+        <a href="#" class="text-sm font-medium hover:text-secondary">BANTUAN</a>
+        <a href="#" class="text-sm font-medium hover:text-secondary">PROMO</a>
+        <a href="#" class="text-sm font-medium hover:text-secondary">TENTANG OLSHOP</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white">
+        <i class="ri-menu-line text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-primary px-6 py-4">
+      <a href="#" class="block text-sm font-medium hover:text-secondary py-2">HOME</a>
+      <a href="#" class="block text-sm font-medium hover:text-secondary py-2">BANTUAN</a>
+      <a href="#" class="block text-sm font-medium hover:text-secondary py-2">PROMO</a>
+      <a href="#" class="block text-sm font-medium hover:text-secondary py-2">TENTANG OLSHOP</a>
+    </nav>
+    <!-- Main Header -->
+    <div class="flex justify-between items-center px-6 py-3">
+      <a href="#" class="font-['Pacifico'] text-2xl font-bold">OLSHOP</a>
+      <div class="w-2/5">
+        <div class="relative">
+          <input type="text" placeholder="Search"
+            class="search-input w-full py-2 px-4 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" />
+          <button
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 w-8 h-8 flex items-center justify-center">
+            <i class="ri-search-line"></i>
+          </button>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="keranjang.html" class="w-10 h-10 flex items-center justify-center hover:text-secondary">
+          <i class="ri-shopping-cart-2-line text-xl"></i>
+        </a>
+        <a href="profil.html" class="w-10 h-10 flex items-center justify-center hover:text-secondary">
+          <i class="ri-user-line text-xl"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center hover:text-secondary">
+          <i class="ri-settings-3-line text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-6">
+    <!-- Promo Banners -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="relative overflow-hidden rounded-lg shadow-lg h-64">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-400 opacity-90"></div>
+        <div style="
+              background-image: url('https://readdy.ai/api/search-image?query=retro%2520sunburst%2520pattern%2520with%2520mint%2520green%2520and%2520white%2520stripes%2520radiating%2520from%2520center%252C%2520clean%2520modern%2520design%252C%2520perfect%2520for%2520sale%2520banner%252C%2520no%2520text%2520simple%2520geometric%2520pattern&width=600&height=400&seq=1&orientation=landscape');
+              background-size: cover;
+              background-position: center;
+            " class="absolute inset-0 opacity-30"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-6">
+          <div class="bg-white text-primary font-bold py-1 px-4 rounded-full mb-2">
+            5.5
+          </div>
+          <h2 class="text-4xl font-bold text-white mb-2">PROMO SPESIAL</h2>
+          <p class="text-white mb-2">SEMUA PRODUK</p>
+          <div class="bg-white text-primary font-bold py-1 px-4 rounded-full mb-2">
+            DISKON HINGGA
+          </div>
+          <p class="text-5xl font-bold text-white">50% OFF</p>
+          <p class="text-white mt-2">Rp 0,-</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-lg shadow-lg h-64">
+        <div class="absolute inset-0 bg-blue-300 opacity-20"></div>
+        <div style="
+              background-image: url('https://readdy.ai/api/search-image?query=clean%2520modern%2520clothing%2520store%2520display%2520with%2520three%2520t-shirts%2520on%2520hangers%252C%2520one%2520red%252C%2520one%2520yellow%252C%2520one%2520blue%252C%2520against%2520mint%2520green%2520background%252C%2520minimalist%2520retail%2520display%252C%2520no%2520text%2520professional%2520product%2520photography&width=600&height=400&seq=2&orientation=landscape');
+              background-size: cover;
+              background-position: center;
+            " class="absolute inset-0"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-6">
+          <h2 class="text-4xl font-bold text-white mb-4 bg-primary bg-opacity-70 px-4 py-2 rounded-lg">
+            PROMO BAJUUU
+          </h2>
+          <div class="grid grid-cols-3 gap-4 w-full">
+            <div class="bg-white bg-opacity-80 p-2 rounded-lg">
+              <p class="text-primary font-bold">KAOS</p>
+              <p class="text-gray-700 text-sm">Rp 50.000</p>
+            </div>
+            <div class="bg-white bg-opacity-80 p-2 rounded-lg">
+              <p class="text-primary font-bold">KEMEJA</p>
+              <p class="text-gray-700 text-sm">Rp 120.000</p>
+            </div>
+            <div class="bg-white bg-opacity-80 p-2 rounded-lg">
+              <p class="text-primary font-bold">JAKET</p>
+              <p class="text-gray-700 text-sm">Rp 200.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Category Menu -->
+    <div class="bg-white rounded p-4 my-4 shadow-sm">
+      <div class="grid grid-cols-5 gap-2">
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+            <i class="ri-t-shirt-line ri-lg text-gray-700"></i>
+          </div>
+          <button class="text-xs text-gray-700 category-item">Baju</button>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+            <i class="ri-shirt-line ri-lg text-gray-700"></i>
+          </div>
+          <button class="text-xs text-gray-700 category-item">Celana</button>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+            <i class="ri-coat-line ri-lg text-gray-700"></i>
+          </div>
+          <button class="text-xs text-gray-700 category-item">Jaket</button>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+            <i class="ri-footprint-line ri-lg text-gray-700"></i>
+          </div>
+          <button class="text-xs text-gray-700 category-item">Sepatu</button>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+            <i class="ri-watch-line ri-lg text-gray-700"></i>
+          </div>
+          <button class="text-xs text-gray-700 category-item">Topi</button>
+        </div>
+      </div>
+    </div>
+    <!-- Lookbook Gallery -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <img
+          src="https://readdy.ai/api/search-image?query=young%2520asian%2520woman%2520wearing%2520casual%2520outfit%2520with%2520cap%252C%2520urban%2520fashion%2520style%252C%2520clean%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high%2520quality%252C%2520detailed%2520clothing%2520textures%252C%2520natural%2520lighting&width=400&height=500&seq=3&orientation=portrait"
+          alt="Fashion Model" class="w-full h-80 object-cover object-top" />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <img
+          src="https://readdy.ai/api/search-image?query=young%2520person%2520trying%2520on%2520clothes%2520in%2520modern%2520clothing%2520store%2520fitting%2520room%252C%2520mirror%2520reflection%252C%2520stylish%2520casual%2520outfit%252C%2520shopping%2520experience%252C%2520clean%2520minimal%2520interior%252C%2520professional%2520lifestyle%2520photography&width=400&height=500&seq=4&orientation=portrait"
+          alt="Shopping Experience" class="w-full h-80 object-cover object-top" />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <img
+          src="https://readdy.ai/api/search-image?query=two%2520young%2520people%2520walking%2520in%2520urban%2520setting%2520wearing%2520trendy%2520streetwear%252C%2520full%2520body%2520shot%252C%2520casual%2520stylish%2520outfits%252C%2520city%2520background%252C%2520natural%2520lighting%252C%2520professional%2520fashion%2520photography&width=400&height=500&seq=5&orientation=portrait"
+          alt="Street Style" class="w-full h-80 object-cover object-top" />
+      </div>
+    </section>
+    <!-- Product Grid -->
+    <section class="mb-8">
+      <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+      <!-- Load More Button -->
+      <div class="flex justify-center mt-8">
+        <button
+          class="bg-white border border-primary text-primary font-medium py-2 px-6 rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap">
+          LIHAT SEMUA PRODUK
+        </button>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gray-50 pt-12 pb-6 border-t border-gray-200">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+        <div>
+          <h3 class="text-gray-800 font-bold mb-4">KATEGORI PRODUK</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Baju Pria</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Baju Wanita</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Celana Pria</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Celana Wanita</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Aksesoris</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary category-item">Sepatu & Tas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-bold mb-4">PEMBAYARAN</h3>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-visa-fill ri-lg text-blue-600"></i>
+            </div>
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-mastercard-fill ri-lg text-red-500"></i>
+            </div>
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-bank-card-fill ri-lg text-gray-700"></i>
+            </div>
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-alipay-fill ri-lg text-blue-500"></i>
+            </div>
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-paypal-fill ri-lg text-blue-700"></i>
+            </div>
+            <div class="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-bank-fill ri-lg text-gray-700"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-bold mb-4">PENGIRIMAN</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-truck-fill ri-lg text-red-500 mr-1"></i>
+              <span class="text-xs font-medium">JNE</span>
+            </div>
+            <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-truck-fill ri-lg text-green-600 mr-1"></i>
+              <span class="text-xs font-medium">J&T</span>
+            </div>
+            <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-truck-fill ri-lg text-blue-500 mr-1"></i>
+              <span class="text-xs font-medium">SiCepat</span>
+            </div>
+            <div class="w-20 h-8 bg-white rounded flex items-center justify-center shadow-sm">
+              <i class="ri-truck-fill ri-lg text-orange-500 mr-1"></i>
+              <span class="text-xs font-medium">Pos</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-bold mb-4">BANTUAN</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-primary">Cara Pembelian</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary">Pengiriman</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary">Pembayaran</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary">Pengembalian</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-bold mb-4">DOWNLOAD APLIKASI</h3>
+          <div class="space-y-3">
+            <a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36 hover:bg-gray-800">
+              <div class="w-8 h-8 flex items-center justify-center mr-2">
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs">Download on the</p>
+                <p class="text-sm font-medium">App Store</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center bg-black text-white rounded-lg px-3 py-2 w-36 hover:bg-gray-800">
+              <div class="w-8 h-8 flex items-center justify-center mr-2">
+                <i class="ri-google-play-fill ri-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs">GET IT ON</p>
+                <p class="text-sm font-medium">Google Play</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2025 OLSHOP. Hak Cipta Dilindungi.</p>
+          <div class="flex space-x-4">
+            <a href="#"
+              class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+              <i class="ri-facebook-circle-line"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script id="navigation-interaction">
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          if (link.href === window.location.href || link.href.endsWith("#")) {
+            e.preventDefault();
+            navLinks.forEach((l) => {
+              l.classList.remove("text-primary", "border-b-2", "border-primary");
+              l.classList.add("text-white");
+            });
+            this.classList.remove("text-white");
+            this.classList.add("text-primary", "border-b-2", "border-primary");
+          }
+        });
+      });
+    });
+  </script>
+  <script id="search-functionality">
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-input");
+      searchInput.addEventListener("focus", function () {
+        this.classList.add("ring-2", "ring-primary", "ring-opacity-50");
+      });
+      searchInput.addEventListener("blur", function () {
+        this.classList.remove("ring-2", "ring-primary", "ring-opacity-50");
+      });
+    });
+  </script>
+  <script id="product-interaction">
+    document.addEventListener("DOMContentLoaded", function () {
+      const fetchProducts = async () => {
+        try {
+          const response = await fetch("https://fakestoreapi.com/products");
+          const products = await response.json();
+          const productGrid = document.getElementById("product-grid");
+          productGrid.innerHTML = "";
+          products.slice(0, 15).forEach((product) => {
+            const productCard = document.createElement("div");
+            productCard.className =
+              "product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition-all";
+            productCard.innerHTML = `
+                <a href="produk.html?id=${product.id}" class="block hover:shadow-lg transition-shadow duration-200">
+                  <div class="bg-secondary p-4 rounded-t-lg">
+                    <img src="${product.image}" alt="${product.title}" class="w-full h-40 object-contain">
+                  </div>
+                  <div class="p-3">
+                    <h3 class="text-gray-800 font-medium text-sm">${product.title.length > 20 ? product.title.substring(0, 17) + "..." : product.title
+              }</h3>
+                    <div class="flex justify-between items-center mt-2">
+                      <p class="text-primary font-bold">Rp ${(product.price * 15000).toLocaleString("id-ID")}</p>
+                      <button type="button" class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full !rounded-button cart-button" data-id="${product.id}">
+                        <i class="ri-shopping-cart-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              `;
+            productGrid.appendChild(productCard);
+          });
+
+          const cartButtons = document.querySelectorAll(".cart-button");
+          cartButtons.forEach((button) => {
+            button.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              this.classList.add("scale-110");
+              setTimeout(() => {
+                this.classList.remove("scale-110");
+              }, 200);
+
+              const productId = this.dataset.id;
+              const product = products.find(p => p.id == productId);
+              if (!product) return;
+
+              let cart = JSON.parse(localStorage.getItem("cart")) || [];
+              const existingProduct = cart.find(p => p.id == productId);
+              const storeId = product.id % 2 === 0 ? "ncr-sports" : "credifox";
+
+              if (existingProduct) {
+                existingProduct.quantity += 1;
+              } else {
+                cart.push({
+                  id: product.id.toString(),
+                  title: product.title,
+                  price: product.price * 15000,
+                  image: product.image,
+                  category: product.category || "Unknown",
+                  store: storeId,
+                  quantity: 1
+                });
+              }
+
+              localStorage.setItem("cart", JSON.stringify(cart));
+              alert("Produk ditambahkan ke keranjang!");
+            });
+          });
+        } catch (error) {
+          console.error("Error fetching products:", error);
+          productGrid.innerHTML =
+            '<p class="text-red-500 text-center col-span-full">Gagal memuat produk. Silakan coba lagi nanti.</p>';
+        }
+      };
+      fetchProducts();
+    });
+  </script>
+  <script id="category-interaction">
+    document.addEventListener("DOMContentLoaded", function () {
+      const categoryItems = document.querySelectorAll(".category-item");
+      categoryItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          categoryItems.forEach((cat) => {
+            cat.classList.remove("bg-primary", "text-white");
+            cat.classList.add("text-gray-700");
+          });
+          this.classList.remove("text-gray-700");
+          this.classList.add("bg-primary", "text-white");
+          console.log(`Category selected: ${this.textContent}`);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
